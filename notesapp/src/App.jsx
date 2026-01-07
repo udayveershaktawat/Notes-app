@@ -1,9 +1,20 @@
 import React from "react";
 
 const App = () => {
+
+  const submitHandler = (e)=>{
+    e.preventDefault()
+    console.log("Form submitted")
+  }
+
+
   return (
     <div className="h-screen  bg-black text-white">
-      <form className="flex items-start flex-col gap-4  p-10 " action="">
+      <form onSubmit={(e)=>{
+        submitHandler(e)
+      }}
+
+       className="flex items-start flex-col gap-4  p-10 " action="">
         <input type="text" 
         placeholder="Enter Notes Task " 
         className="px-5 py-2 w-1/2 border-2 font-medium rounded outline-none"
